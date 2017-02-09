@@ -54,7 +54,7 @@ API
 
 ### vendingMachine.
 
-  #####getSlotDataByIndex(rackLiteral, slotIndex)
+#####getSlotDataByIndex(rackLiteral, slotIndex)
   
   returns an object with a slot data
   
@@ -67,19 +67,19 @@ API
     }
 ```
 
-  #####getMachineData()
+#####getMachineData()
   
   returns an object with all content from all racks
 
-  #####loadProduct(rack, slotNumber, product, quantity)
+#####loadProduct(rack, slotNumber, product, quantity)
   
   load a product to specified slot
 
-  #####giveProduct(rackLiteral, slotIndex)
+#####giveProduct(rackLiteral, slotIndex)
   
   give one product from specified slot
 
-  ####example
+####example
   ```javascript
 import { vendingMachine } from './core/api/index';
 
@@ -103,7 +103,7 @@ get the cashier data (balance)
 #####  pay(value)
 pay from balance. Returns a promise, which resolved with message if ok, rejected if not
 
-  ####example
+####example
   ```javascript
 import { cashier } from '../../../core/api/index';
 import { COINS } from '../../../core/config/config'
