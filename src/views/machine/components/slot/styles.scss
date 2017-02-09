@@ -1,0 +1,58 @@
+
+.b-slot {
+  position: relative;
+  cursor: pointer;
+  height: 150px;
+  border-right: 1px solid rgba(0,0,0,0.7);
+  padding: 10px;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.b-slot__item-title {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+}
+
+.b-slot__item-quantity {
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+}
+
+.b-slot__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+
+}
+
+.b-slot__info-price {
+  flex-grow: 2;
+  text-align: right;
+  padding: 5px;
+  background-color: #aee9ff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+}
+
+.b-slot__info-place {
+  padding: 5px;
+  background-color: #c2aaff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
