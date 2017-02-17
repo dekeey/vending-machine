@@ -1,8 +1,7 @@
-/* eslint-disable */
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
 import { connect } from 'react-redux';
-import "./styles.scss";
+import './styles.scss';
 import { machineActions } from '../../../../core/redux/machine/index'
 
 class Slot extends React.Component {
@@ -37,8 +36,6 @@ class Slot extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateSlotData: (rackLiteral, slotIndex) =>
-      dispatch(machineActions.updateSlotData(rackLiteral, slotIndex)),
     purchase: (rackLiteral, slotIndex) =>
       dispatch(machineActions.purchase(rackLiteral, slotIndex)),
   }
@@ -46,7 +43,8 @@ const mapDispatchToProps = (dispatch) => {
 
 
 Slot.propTypes = {
-  slot: React.PropTypes.object.isRequired
+  slot: React.PropTypes.object.isRequired,
+  purchase: React.PropTypes.func
 };
 
 

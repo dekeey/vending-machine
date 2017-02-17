@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+
 import { createMessage } from '../utils/message';
 
 export default class Slot {

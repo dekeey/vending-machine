@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { put, fork, call } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
 import { createMessage } from '../../api/utils/message'
@@ -19,14 +18,17 @@ export function* purchase ({ payload }) {
     try {
       let paymentRequest = yield call([cashier, cashier.pay], slotInfo.product.price); //call with context binding
       yield put(analyticsActions.sendSuccessEvent(paymentRequest));
+
       let giveProductRequest = yield call([vendingMachine, vendingMachine.giveProduct], rackLiteral, slotIndex); //call with context binding
       yield put(analyticsActions.sendSuccessEvent(giveProductRequest));
 
-      yield put(machineActions.updateSlotData( rackLiteral, slotIndex ));
+      let slotData = vendingMachine.getSlotDataByIndex(payload.rackLiteral, payload.slotIndex);
+      yield put(machineActions.updateSlotData( rackLiteral, slotIndex, slotData ));
       yield put(cashierActions.updateData());
       yield put(infoDisplayActions.updateMessage(`Here! Take your ${slotInfo.product.title}`));
 
     } catch (errorMessage) {
+
       yield put(infoDisplayActions.updateMessage(errorMessage.message));
       yield put(analyticsActions.sendErrorEvent(errorMessage));
 

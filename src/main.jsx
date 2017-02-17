@@ -25,7 +25,7 @@ const rootElement = document.getElementById('root');
 
 const store = configureStore();
 
-store.dispatch(machineActions.updateData());
+store.dispatch(machineActions.updateData(vendingMachine.getMachineData()));
 store.dispatch(cashierActions.updateData());
 
 const onCashierSuccessMessage = (message) => {

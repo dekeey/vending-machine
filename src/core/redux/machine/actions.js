@@ -4,18 +4,22 @@ export const machineActions = {
   UPDATE_SLOT_DATA: 'MACHINE/UPDATE_SLOT_DATA',
   PURCHASE_REQUEST: 'MACHINE/PURCHASE',
 
-  updateData: () => {
+  updateData: (data) => {
     return {
-      type: machineActions.UPDATE_DATA
+      type: machineActions.UPDATE_DATA,
+      payload: {
+        data
+      }
     }
   },
 
-  updateSlotData: (rackLiteral, slotIndex) => {
+  updateSlotData: (rackLiteral, slotIndex, data) => {
     return {
       type: machineActions.UPDATE_SLOT_DATA,
       payload: {
         rackLiteral,
-        slotIndex
+        slotIndex,
+        data
       }
     }
   },

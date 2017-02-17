@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { PRODUCTS } from '../../config/config'
 
 import Slot from './slot'

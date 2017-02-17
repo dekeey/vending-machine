@@ -1,3 +1,4 @@
+/* eslint-disable no-undef, no-console */
 import { COINS } from '../../config/config';
 import { createMessage } from '../utils/message';
 

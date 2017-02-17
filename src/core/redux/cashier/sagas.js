@@ -1,5 +1,6 @@
-/* eslint-disable */
-import { put, fork, call, cps, select } from 'redux-saga/effects'
+/* eslint-disable no-console */
+
+import { put, fork, call } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
 import { cashierActions } from './index'
 import { cashier } from '../../api/index'
